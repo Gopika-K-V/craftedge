@@ -1,13 +1,3 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
-
-if (menuToggle && siteNav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-}
-
 const revealElements = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(
   (entries) => {
@@ -22,5 +12,3 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
-
-document.getElementById('year').textContent = new Date().getFullYear();
